@@ -1,0 +1,20 @@
+[
+  {
+    "DepId": "1",
+    "Name": "Mail",
+    "MinWeight": "0.00",
+    "MaxWeight": "1.00"
+  },
+  {
+    "DepId": "2",
+    "Name": "Regular",
+    "MinWeight": "1.00",
+    "MaxWeight": "10.00"
+  },
+  {
+    "DepId": "3",
+    "Name": "Heavy",
+    "MinWeight": "10.00",
+    "MaxWeight": "1000.00"
+  }
+]

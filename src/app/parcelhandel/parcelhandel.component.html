@@ -1,0 +1,26 @@
+<table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th>Sender Name</th>
+      <th>Sender Address</th>
+      <th>Reciepient Name</th>
+      <th>Reciepient Address</th>
+      <th>Weight of Prcel</th>
+      <th>Handeling Department</th>
+      <th>Processed By</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of parcesl">
+      <td>{{result.Sender.Name}}</td>
+      <td>{{result.Sender.Address.HouseNumber}} {{result.Sender.Address.Street}} {{result.Sender.Address.PostalCode}} {{result.Sender.Address.City}}</td>
+      <td>{{result.Receipient.Name}}</td>
+      <td>{{result.Receipient.Address.HouseNumber}} {{result.Receipient.Address.Street}} {{result.Receipient.Address.PostalCode}} {{result.Receipient.Address.City}}</td>
+      <td>{{result.Weight}} Kg</td>
+      <td *ngIf="result.Value<=1000">{{result.departments}}</td>
+      <td *ngIf="result.Value>1000">Needs to be signed by Insurance First</td>
+      <td><a [class.disabled]="result.Value>1000 ? true : null" a class="btn btn-primary" [routerLink]="['/process/'+result.id]">Process Parcel</a></td>
+    </tr>
+  </tbody>
+</table>
