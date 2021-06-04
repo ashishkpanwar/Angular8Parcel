@@ -36,15 +36,10 @@ export class Assigndepartments {
     this.loaddata().subscribe((data) => {
       this.shipment.parcels.forEach(x => {
         this.department.forEach(y => {
-          if (parseFloat(x.Weight) > parseFloat(y.MinWeight) && parseFloat(x.Weight)
-            <= parseFloat(y.MaxWeight)) {
-            x.departments = y.Name;
-          }
-          //this.department.forEach(y => {
-          //  if (x.Weight > y.MinWeight && x.Weight
-          //    <= y.MaxWeight) {
-          //    x.departments = y.Name;
-          //  }
+            if (x.Weight > +y.MinWeight && x.Weight
+              <= +y.MaxWeight) {
+              x.departments = y.Name;
+            }
         });
       })
       _.next(this.shipment);

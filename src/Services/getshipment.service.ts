@@ -63,7 +63,7 @@ export class GetshipmentService {
         shipment.parcels.forEach(x =>
         {
           x.Weight = x.Weight[0];
-          x.Value = x.Value[0];
+          x.Value = +x.Value[0];
           x.Signed = false;
           x.id = id++;
           //senedr data
